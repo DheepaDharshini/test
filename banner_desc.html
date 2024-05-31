@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatus</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Style for the video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust as needed */
+            overflow: hidden;
+         
+        }
+        /* Style for the video */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+        }
+        /* Style for the play button */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color:black;
+            border-radius: 50px;
+            color: white;
+            padding:10px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+         /* Style for the description */
+         .video-description {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .nav-contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top:5px;
+            background-color: #5A9ABF;
+            color:#fff;
+          }
+        
+        .nav-contact h1{
+            font-size: 1rem;
+        }
+        .nav-contact h2{
+            font-size: 1rem;
+        }
+        .nav-contact img{
+            height: 20px;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .nav-contact h1 {
+                font-size: 12px; /* Adjust the font size as needed */
+            }
+            .nav-contact h2 {
+                font-size: 12px; /* Adjust the font size as needed */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-contact h1 {
+                font-size: 9px;
+                padding-top:4px; /* Adjust the font size as needed */
+            }
+            .nav-contact h2 {
+                font-size: 9px;
+                padding-top:4px; /* Adjust the font size as needed */
+            }
+        }
+        
+
+    .navbar-nav {
+        justify-content: space-around;
+        flex-direction: row !important;
+        align-items: center;
+        padding-left:300px;
+        
+      }
+  
+      .nav-item {
+        margin: 0 10px;
+        padding:05px;
+     
+      }
+  
+      .nav-link {
+        position: relative;
+        color: #fff;
+     
+        text-decoration: none;
+      }
+  
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -0.5px;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+  
+      .nav-link:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+  
+      @media (max-width: 768px) {
+        .nav-item {
+          margin: 5px 0;
+         
+        }
+        .navbar-nav{
+            padding-left: 0%;
+        }
+      }
+      .navbar {
+        background-color: #014AAD; /* Custom background color */
+      }
+      .navbar .nav-item:hover{
+        font-weight: bold;
+      }
+      .video-description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .quote,
+    .quote-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+    }
+    
+    .quote-desc{
+    background-color: rgba(255, 252, 252, 0.700); /* Transparent white background */
+    padding: 20px; /* Add padding for better appearance */
+    border-radius: 30px;
+    }
+
+    img {
+        max-width: 100%;
+        height:150px;
+        margin: 0 10px;
+    }
+
+    @media (max-width: 768px) {
+        .video-description {
+            flex-direction: column;
+        }
+
+        .quote,
+        .quote-desc {
+            margin: 10px 0;
+        }
+    }
+    .video-text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2; /* Ensure it's above the video and play button */
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    @media (max-width: 768px) {
+        .video-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 420px;
+        }
+    
+        .quote,
+        .quote-desc {
+            margin: 10px 0; /* Adjust margin as needed */
+            text-align: center;
+        }
+    
+        video-description img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px 0; /* Adjust margin as needed */
+        }
+    }
+    @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+    
+    .home-container h3, .home-container h1 {
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+    
+    .home-container h3:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    
+    .home-container h3:nth-child(2) {
+      animation-delay: 1s;
+    }
+    
+    .home-container h3:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+    
+    .home-container h3:nth-child(4) {
+      animation-delay: 2s;
+    }
+    
+    .home-container h1 {
+      animation-delay: 2.5s;
+    }
+    
+    @media (max-width: 768px) {
+        .video-description  h2{
+          background-color: #51B8E7;
+            margin-top:0;
+            font-size: 10px;
+        }
+        .video-description  h3{
+           color:#000;
+            margin-top:0;
+            font-size: 12px;
+        }
+        video{
+            margin-top: 30px;
+            height:200px;
+        }
+    
+     
+    }
+    .social-icons {
+      display: flex;
+      flex-direction: column; /* Align icons in a column */
+      position: fixed; /* Fix the position on the left side */
+      left: 0;
+      top: 50%; 
+      color: #fff;/* Center vertically */
+      transform: translateY(-50%); /* Adjust to center */
+    }
+    
+    .social-icons a {
+      padding: 10px 0; /* Adjust spacing as needed */
+      display: block; 
+      background-color: #014AAD;
+      color: #fff;/* Ensure each link is a block for vertical alignment */
+    }
+    
+    /* Media Query for small screens */
+    @media (max-width: 576px) {
+      .social-icons {
+          left: 10px; /* Adjust left position for small screens */
+          top: auto;
+          bottom: 10px; /* Position at the bottom left */
+          transform: none; /* Reset transform */
+      }
+      
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="nav-contact">
+        
+        <h1 class="pl-5">Floatus - Wellness Float - Dry & Wet Float Therapy</h1>
+        <h2 class="pr-5 "><img src="images/mobile.png" alt="mobile " class="pr-2"> +91-99999 99999</h2>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="path/to/your/logo.png" alt="Logo">
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto justify-content-center text-center">
+            <li class="nav-item ">
+              <a class="nav-link text-light pr-3" href="home.html">Home</a>
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link text-light pr-3" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="benefits.html">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light pr-3" href="about.html">About Us</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+    <div class="video-container">
+        <div class="video-text">
+            <h2>Welcome to Floatus</h2>
+           
+        </div>
+    
+        <video id="background-video" loop muted controls>
+            <source src="video/Untitled design.mp4" type="video/mp4">
+           
+        </video><br>
+       
+        <div class="play-button pl-3 mt-5" onclick="playPause()">
+            &#x25BA; <!-- Play icon -->
+        </div>
+        
+    </div> 
+   
+    <div class="video-description clearfix pt-5">
+
+        <div class="quote pt-4 pl-3">
+        <h3>Discover Transquility</h3>
+        <h3>Elevate your well-being</h3>
+        <h3>Soothe our body</h3>
+        <h3>Calm your mind</h3>
+       
+    </div>
+
+    <img src="images/braces.png" >
+
+    <div class="quote-desc pt-4 pl-2">
+        <h3>Each Line will</h3>
+        <h3>appear one by one</h3>
+        <h3>with animation</h3>
+    </div>
+    </div> 
+   
+    <div class="social-icons">
+      <a href="" title="whatsapp " class="mt-1"><i class="fab fa-whatsapp pl-1 pr-1"></i></a>
+      <a href="" title="facebook" class="mt-1"><i class="fab fa-facebook pl-1 pr-1"></i></a>
+      <a href="" title="instagram" class="mt-1"><i class="fab fa-instagram pl-1 pr-1"></i></a>
+      <a href="" title="youtube" class="mt-1"><i class="fab fa-youtube pl-1 pr-1"></i></a>
+      <a href="" title="pinterest" class="mt-1"><i class="fab fa-pinterest pl-1 pr-1"></i></a>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var video = document.getElementById('background-video');
+
+        function playPause() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
+</body>
+</html>

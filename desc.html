@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatus</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height:70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .container{
+            margin-top:250px;
+        }
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+    
+          }
+          .image-section {
+            margin-right: 20px;
+            
+          }
+          .image-section img {
+            width: 70%;
+            max-width: 300px;
+          }
+          .description {
+            flex: 1;
+          }
+          @media (max-width: 768px) {
+            .content-wrapper {
+              flex-direction: column;
+              margin-top: 40%;
+              margin-bottom: 80%;
+            }
+            .image-section {
+              margin-right: 0;
+              padding-top:20px;
+              margin-top:40px;
+              margin-bottom: 20px;
+            }
+            .image-section img {
+                width: 50%;
+                max-width: 200px;
+              }
+          }
+          @media (max-width: 576px) {
+            .content-wrapper {
+              flex-direction: column;
+            }
+            .image-section {
+              margin-right: 0;
+              padding-top: 820px;
+              margin-bottom: 20px;
+            }
+            .image-section img {
+                width: 50%;
+                max-width: 200px;
+              }
+          }
+          h1{
+            font-family: 'Univers47Cond', sans-serif;
+            font-size: 25px;
+          }
+          .description{
+            padding-left:250px ;
+           
+           
+          }
+          li{
+            font-size: 20px;
+          }
+          ul{
+            padding:20px;
+          }
+          @media (max-width: 768px) {
+          
+            .description{
+                padding:0;
+               margin-bottom: 500px;
+            }
+            ul{
+                padding:0px;
+              }
+          }
+          @media (max-width: 576px) {
+            .description{
+                padding:0;
+        
+          }
+          ul{
+            padding:0px;
+          }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container pt-5 mt-5">
+        <div class="content-wrapper mt-5">
+          <div class="image-section mt-5">
+            <img src="https://via.placeholder.com/300" alt="Sample Image">
+            <h1 class="pt-5">Information Design</h1>
+          </div>
+          <div class="description text-left ml-5">
+          
+            <p class="text-justify">
+             <ul>
+                <li>Introduction to Float</li>
+                <li>Experience/Services provided</li>
+                <ul>
+                    <li>Dry</li>
+                    <li>Wet</li>
+                </ul>
+                <li>Benefits of Float
+                </li>
+                <li>Packages & Prices</li>
+             </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

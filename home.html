@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatus | home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Style for the video container */
+      .video-container {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+      }
+      /* Style for the video */
+      video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 150%;
+          object-fit: cover;
+      }
+      /* Style for the play button */
+      .play-button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          background-color: black;
+          border-radius: 50px;
+          color: white;
+          padding: 10px;
+          font-size: 2em;
+          cursor: pointer;
+      }
+      /* Style for the description */
+      .video-description {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          color: white;
+          font-size: 1.5em;
+          text-align: center;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .nav-contact {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 5px;
+          background-color: #5A9ABF;
+          color: #fff;
+      }
+      .nav-contact h1, .nav-contact h2 {
+          font-size: 1rem;
+      }
+      .nav-contact img {
+          height: 20px;
+      }
+
+      /* Navbar styles */
+      .navbar-nav {
+          justify-content: space-around;
+          flex-direction: row !important;
+          align-items: center;
+          padding-left: 300px;
+      }
+      .nav-item {
+          margin: 0 10px;
+          padding: 5px;
+      }
+      .nav-link {
+          position: relative;
+          color: #fff;
+          text-decoration: none;
+      }
+      .nav-link::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -0.5px;
+          left: 0;
+          background-color: #fff;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out;
+      }
+      .nav-link:hover::before {
+          visibility: visible;
+          transform: scaleX(1);
+      }
+      .navbar {
+          background-color: #014AAD;
+      }
+      .navbar .nav-item:hover {
+          font-weight: bold;
+      }
+      .container {
+          display: flex;
+          margin-top: 30px;
+          flex-direction: column;
+          align-items: center;
+      }
+      .home-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          max-width: 800px;
+          margin-top: -40px;
+          width: 100%;
+      }
+      .home-container h1 {
+          text-align: center;
+          margin: 20px 0;
+          font-weight: bold;
+          padding-left: 30px;
+          padding-top: -250px !important;
+          font-size: 60px;
+          word-wrap: normal;
+          letter-spacing: 10px;
+      }
+      .desc h3 {
+          text-align: right;
+          width: 100%;
+          margin: 5px 0;
+          font-size: 25px;
+      }
+      .desc {
+          margin-left: 200px;
+          text-align: center;
+      }
+      .des1 {
+          text-align: center;
+          width: 25%;
+          font-size: 20px;
+          background-color: rgba(237, 234, 234, 0.6);
+          padding: 20px;
+          margin-left: 950px;
+          border-radius: 50px;
+      }
+      .des1 h3 {
+          margin: 5px 0;
+          font-size: 15px;
+      }
+
+      /* Base styles */
+      .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+          padding: 20px;
+      }
+      h1, h3 {
+          margin: 10px 0;
+      }
+
+      /* Media queries */
+      @media (max-width: 768px) {
+        .nav-contact h1{
+          font-size: 12px;
+        }
+        .nav-contact h2{
+          font-size: 12px;
+          margin-left: -120px;
+        }
+          .navbar-nav {
+              padding-left: 0;
+          }
+          .home-container h1 {
+              font-size: 20px;
+              padding-left: 10px;
+          }
+          .home-container h2{
+            font-size: 12px;
+          }
+          .home-container .desc h3 {
+              font-size: 20px;
+            
+          }
+          .des1 {
+              width: 80%;
+              margin-left: 0;
+          }
+      }
+      @media (max-width: 576px) {
+        .nav-contact h1{
+          font-size: 12px;
+        }
+        ul li{
+          font-size: 08px;
+        }
+          .home-container h1 {
+              font-size: 20px;
+              padding-left: 5px;
+          }
+          .home-container .desc h3 {
+              font-size: 10px;
+          }
+          .home-container h2{
+            font-size: 12px;
+          }
+          .des1 {
+              width: 90%;
+              margin-left: 0;
+              margin-top: 120px;
+          }
+      }
+     /* Media query for very small screens */
+@media (max-width: 576px) {
+  .navigation-img {
+      height: 30px; /* Adjust as necessary */
+      width: 30px;  /* Adjust as necessary */
+  }
+}
+.social-icons {
+display: flex;
+flex-direction: column; /* Align icons in a column */
+position: fixed; /* Fix the position on the left side */
+left: 0;
+top: 50%; 
+color: #fff;/* Center vertically */
+transform: translateY(-50%); /* Adjust to center */
+}
+
+.social-icons a {
+padding: 10px 0; /* Adjust spacing as needed */
+display: block; 
+background-color: #014AAD;
+color: #fff;/* Ensure each link is a block for vertical alignment */
+}
+
+/* Media Query for small screens */
+@media (max-width: 576px) {
+.social-icons {
+    left: 10px; /* Adjust left position for small screens */
+    top: auto;
+    bottom: 10px; /* Position at the bottom left */
+    transform: none; /* Reset transform */
+}
+}
+
+  </style>
+</head>
+<body>
+    <div class="nav-contact">
+        
+        <h1 class="">Floatus - Wellness Float - Dry & Wet Float Therapy</h1>
+        <h2 class=""><img src="images/mobile.png" alt="mobile " class=""> +91-99999 99999</h2>
+    </div>
+    <nav class="navbar fixed navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="path/to/your/logo.png" alt="Logo">
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto justify-content-center text-center">
+            <li class="nav-item ">
+              <a class="nav-link text-light" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="benefits.html">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="about.html">About Us</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container pt-5"><br><br>
+        <div class="home-container" style="margin-top: -200px;">
+            <div class="des1 mt-0 ml-2" >
+                <h3>Alternate Option For</h3>
+                <h3 class="pr-5">Video</h3>
+            </div>
+            <h1 class="pl-5 ml-5 text-right">Float Theraphy</h1>
+            <div class="desc mt-5">
+                <h3>Discover Transquility</h3>
+                <h3>Elevate your well-being</h3>
+                <h3>Soothe our body</h3>
+                <h3>Calm your mind</h3>
+               
+            </div>
+            <div class="des1 mt-3 ml-4" >
+                <h3>Each Line will</h3>
+                <h3>appear one by one</h3>
+                <h3>with animation</h3>
+            </div>
+        </div>
+      </div>
+      
+      <div class="social-icons">
+        <a href="" title="whatsapp " class="mt-1"><i class="fab fa-whatsapp pl-1 pr-1"></i></a>
+        <a href="" title="facebook" class="mt-1"><i class="fab fa-facebook pl-1 pr-1"></i></a>
+        <a href="" title="instagram" class="mt-1"><i class="fab fa-instagram pl-1 pr-1"></i></a>
+        <a href="" title="youtube" class="mt-1"><i class="fab fa-youtube pl-1 pr-1"></i></a>
+        <a href="" title="pinterest" class="mt-1"><i class="fab fa-pinterest pl-1 pr-1"></i></a>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

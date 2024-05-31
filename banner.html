@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatus</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Style for the video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust as needed */
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        /* Style for the video */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+        }
+        /* Style for the play button */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color:black;
+            border-radius: 50px;
+            color: white;
+            padding:10px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+         /* Style for the description */
+         .video-description {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="background-video" loop muted controls>
+            <source src="video/Untitled design.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="play-button pl-3" onclick="playPause()">
+            &#x25BA; <!-- Play icon -->
+        </div>
+        
+    </div>
+    <!-- <div class="video-description">
+        This is the description in front of the video.
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var video = document.getElementById('background-video');
+
+        function playPause() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
+</body>
+</html>

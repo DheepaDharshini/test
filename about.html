@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatus | about</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Style for the video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Adjust as needed */
+            overflow: hidden;
+         
+        }
+        /* Style for the video */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+        }
+        /* Style for the play button */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background-color:black;
+            border-radius: 50px;
+            color: white;
+            padding:10px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+         /* Style for the description */
+         .video-description {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .nav-contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top:5px;
+            padding: 5px;
+            background-color: #5A9ABF;
+            color:#fff;
+          }
+        
+        .nav-contact h1{
+            font-size: 1rem;
+        }
+        .nav-contact h2{
+            font-size: 1rem;
+        }
+        .nav-contact img{
+            height: 26px;
+            width:36px;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            .nav-contact h1 {
+                font-size: 12px; /* Adjust the font size as needed */
+            }
+            .nav-contact h2 {
+                font-size: 12px; /* Adjust the font size as needed */
+            }
+            ul li{
+              font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-contact h1 {
+                font-size: 12px;
+                padding-top:4px; /* Adjust the font size as needed */
+            }
+            .nav-contact h2 {
+                font-size: 12px;
+                padding-top:4px; 
+                margin-left: -190px;/* Adjust the font size as needed */
+            }
+            ul li{
+              font-size: 12px;
+            }
+        }
+        
+
+    .navbar-nav {
+        justify-content: space-around;
+        flex-direction: row !important;
+        align-items: center;
+        padding-left:300px;
+      
+        
+      }
+  
+      .nav-item {
+        margin: 0 10px;
+        padding:05px;
+     
+      }
+  
+      .nav-link {
+        position: relative;
+        color: #fff;
+     
+        text-decoration: none;
+      }
+  
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -0.5px;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+  
+      .nav-link:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+  
+      @media (max-width: 768px) {
+        .nav-item {
+          margin: 5px 0;
+         
+        }
+        .navbar-nav{
+            padding-left: 0%;
+        }
+      }
+      .navbar {
+        background-color: #014AAD; /* Custom background color */
+      }
+      .navbar .nav-item:hover{
+        font-weight: bold;
+      }
+      .container {
+        margin-top: 20px;
+        border: none;
+        overflow: hidden; /* Clearfix */
+      }
+      .left-side {
+        float: left;
+
+       margin-top: 90px;
+        
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .right-side {
+        float: right;
+        width: 50%;
+        margin-top: 40px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+  
+      /* Media Query for Mobile */
+      @media (max-width: 768px) {
+        .left-side, .right-side {
+          float: none;
+          width: 100%;
+        }
+      }
+      .right-side p{
+        font-size: 23px ;
+        margin-left: 20px;
+      
+      }
+      .ques{
+        font-size: 20px;
+      }
+     .pods{
+        font-size: 20px;
+     }
+     /* Base styles */
+img {
+    height: 5%; /* Adjust as necessary */
+    width: 50px;  
+    margin-left:230px;/* Adjust as necessary */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    img {
+        height: 40px; /* Adjust as necessary */
+        width: 40px;  /* Adjust as necessary */
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    img {
+        height: 30px; /* Adjust as necessary */
+        width: 30px;  /* Adjust as necessary */
+    }
+}
+/* Container for flexbox */
+.image-container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;     /* Center items vertically */
+    gap: 10px;               /* Space between images */
+}
+
+/* Image styles */
+.navigation-img {
+    height: 50px; /* Adjust as necessary */
+    width: 50px; 
+    /* Adjust as necessary */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navigation-img {
+        height: 40px; /* Adjust as necessary */
+        width: 40px;  /* Adjust as necessary */
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    .navigation-img {
+        height: 30px; /* Adjust as necessary */
+        width: 30px;  /* Adjust as necessary */
+    }
+}
+.left-side p{
+    font-size: 20px;
+}
+.container h2{
+    font-size: 70px;
+}
+.right-side p{
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column; /* Align icons in a column */
+  position: fixed; /* Fix the position on the left side */
+  left: 0;
+  top: 50%; 
+  color: #fff;/* Center vertically */
+  transform: translateY(-50%); /* Adjust to center */
+}
+
+.social-icons a {
+  padding: 10px 0; /* Adjust spacing as needed */
+  display: block; 
+ 
+  background-color: #014AAD;
+  color: #fff;/* Ensure each link is a block for vertical alignment */
+}
+
+/* Media Query for small screens */
+@media (max-width: 576px) {
+  .social-icons {
+      left: 10px; /* Adjust left position for small screens */
+      top: auto;
+      bottom: 10px; /* Position at the bottom left */
+      transform: none; /* Reset transform */
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="nav-contact ">
+        
+        <h1 class="pl-2">Floatus - Wellness Float - Dry & Wet Float Therapy</h1>
+        <h2 class=" "><img src="images/mobile.png" alt="mobile" >+91-99999 99999</h2>
+    
+    </div>
+    <nav class="navbar fixed navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="path/to/your/logo.png" alt="Logo">
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto justify-content-center text-center">
+            <li class="nav-item ">
+              <a class="nav-link text-light pr-3" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="experience.html">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="benefits.html">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="packages.html">Packages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light pr-3" href="about.html">About Us</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-light pr-3" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="container mt-3">
+        <div class="left-side pr-5 pt-5">
+          <h2 class="text-center ">About us</h2>
+          <div class="text-center pt-5">
+        <p>We focus on non-invasive </p>
+        <p>health therapy services</p>
+        <img src="" alt="logo">
+        
+        </div>
+    </div>
+        <div class="right-side pl-5">
+          <div class=" text-left text-lg-start">
+            <p >At Floatus, we believe in the transformative power of float therapy to nurture the mind, body, and spirit. Nestled in the heart of Chennai, our center offers a serene escape from the hustle and bustle of daily life, inviting you to embark on a journey of deep relaxation and rejuvenation.</p>
+
+                <p>We pride ourselves on providing a premium float therapy experience tailored to your unique needs. Our state-of-the-art float cabins, pods & beds offer a tranquil environment where you can effortlessly float atop a soothing blend of warm water and Epsom salt, experiencing weightlessness and sensory deprivation that promotes profound relaxation. </p>
+                
+        </div>
+        </div>
+        </div>
+
+
+
+
+     
+        <div class="social-icons">
+          <a href="" title="whatsapp " class="mt-1"><i class="fab fa-whatsapp pl-1 pr-1"></i></a>
+          <a href="" title="facebook" class="mt-1"><i class="fab fa-facebook pl-1 pr-1"></i></a>
+          <a href="" title="instagram" class="mt-1"><i class="fab fa-instagram pl-1 pr-1"></i></a>
+          <a href="" title="youtube" class="mt-1"><i class="fab fa-youtube pl-1 pr-1"></i></a>
+          <a href="" title="pinterest" class="mt-1"><i class="fab fa-pinterest pl-1 pr-1"></i></a>
+      </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
